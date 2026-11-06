@@ -1,0 +1,92 @@
+/* --- SKILLS SECTION (NEW) --- */
+.skills {
+    background-color: var(--bg-light);
+}
+
+.skills h3 {
+    text-align: center;
+    font-size: 1.8rem;
+    margin: 3rem 0 1rem;
+    color: var(--text-primary);
+}
+
+.skills-track-container {
+  overflow: hidden;
+  padding: 20px 0;
+  position: relative;
+}
+
+.skills-track {
+    display: flex;
+    gap: 3rem;
+    white-space: nowrap;
+    transform: translate3d(0, 0, 0); 
+    animation: scroll-left 20s linear infinite;
+}
+
+.skills-track.reverse {
+    animation: scroll-right 20s linear infinite;
+}
+
+.skills-track:hover {
+    animation-play-state: paused;
+}
+
+.skill-item-new {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  font-size: 1.2rem;
+  color: var(--text-primary);
+  flex-shrink: 0;
+}
+
+.skill-item-new i {
+  font-size: 3rem;
+  color: var(--accent-color);
+}
+
+/* Keyframes đã được tối ưu:
+   - Cuộn từ 0% đến -100% (tương ứng với một vòng lặp của nội dung đã được JS nhân đôi).
+   - Trình duyệt sẽ tự động lặp lại một cách liền mạch.
+*/
+@keyframes scroll-left {
+    from { transform: translateX(0%); }
+    to { transform: translateX(-100%); }
+}
+
+@keyframes scroll-right {
+    from { transform: translateX(-100%); }
+    to { transform: translateX(0%); }
+}
+
+/* Ẩn các style cũ */
+.skill-item,
+.progress-bar,
+.skills-grid {
+    display: none;
+}
+
+/* Icon item */
+.skill-item-new {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    font-size: 1.2rem;
+    color: var(--text-primary);
+}
+
+.skill-item-new i {
+    font-size: 3rem;
+    color: var(--accent-color);
+}
+
+/* Ẩn các style cũ */
+.skill-item,
+.progress-bar {
+    display: none;
+}
+
+.skills-grid {
+    display: block;
+}
