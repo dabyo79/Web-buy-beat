@@ -1,0 +1,341 @@
+:root{--bg:#07090d;--p:#0e131b;--line:#222b38;--txt:#eef2f6;--muted:#8c97a7;--a:#d7ff3f}*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--txt);font:14px Arial}button,input,textarea{font:inherit}button{cursor:pointer}input,textarea{width:100%;background:#080c12;color:#fff;border:1px solid var(--line);border-radius:9px;padding:11px;margin-top:6px}.center{min-height:100vh;display:grid;place-items:center}.card{background:var(--p); border:1px solid var(--line);border-radius:15px;padding:22px}.center .card{width:min(390px,92vw);display:grid;gap:13px}.center b{font-size:25px;letter-spacing:.15em}.center span{font-size:10px;color:var(--a);letter-spacing:.2em}.center button,header>button,.modal button:last-child{background:var(--a);color:#050700;border:0;border-radius:9px;padding:12px;font-weight:800}.hidden{display:none!important}aside{position:fixed;width:220px;inset:0 auto 0 0;background:#080b10;border-right:1px solid var(--line);padding:28px 15px;display:flex;flex-direction:column;gap:7px}aside h2{margin:0 10px;letter-spacing:.15em}aside small{color:var(--muted);margin:0 10px 25px}aside button{background:none;border:0;color:#98a2b1;text-align:left;padding:12px;border-radius:9px}aside button:hover{background:#151b24;color:#fff}aside #logout{margin-top:auto}main{margin-left:220px;padding:30px;max-width:1400px}header,.row{display:flex;justify-content:space-between;align-items:center;gap:15px}header{border-bottom:1px solid var(--line);padding-bottom:20px;margin-bottom:22px}header h1{margin:5px 0;font-size:27px}header small{color:var(--a);letter-spacing:.15em}.stats{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-bottom:18px}.stats .card,.stats>div{background:var(--p);border:1px solid var(--line);border-radius:14px;padding:20px}.stats small{color:var(--muted)}.stats b{display:block;font-size:32px;margin-top:10px}.card h3{margin-top:0}.table{width:100%;border-collapse:collapse}.table th,.table td{text-align:left;padding:12px;border-bottom:1px solid var(--line)}.table th{font-size:10px;color:var(--muted)}.tag{font-size:10px;padding:5px 8px;border-radius:99px;background:#17251b;color:#aee875}.actions button{background:#171e28;color:#fff;border:1px solid var(--line);border-radius:6px;padding:6px 9px}.muted{color:var(--muted)}label{color:#aab4c2;font-size:12px}.overlay{position:fixed;inset:0;background:#000b;display:grid;place-items:center;padding:20px}.modal{width:min(720px,96vw);background:var(--p);border:1px solid var(--line);border-radius:16px;padding:22px;display:grid;gap:14px}.grid{display:grid;grid-template-columns:1fr 1fr;gap:10px}.modal .row label{display:flex;gap:7px;align-items:center}.modal .row label input{width:auto;margin:0}@media(max-width:800px){aside{width:62px}aside h2,aside small,aside button{font-size:0}aside button:before{font-size:18px}main{margin-left:62px;padding:18px}.stats{grid-template-columns:1fr 1fr}.grid{grid-template-columns:1fr}}
+.audio-preview {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  min-width: 220px;
+}
+
+.play-btn {
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  border: 0;
+  cursor: pointer;
+  font-size: 14px;
+  flex-shrink: 0;
+}
+
+.audio-info {
+  width: 160px;
+}
+
+.audio-time {
+  font-size: 11px;
+  margin-bottom: 4px;
+  color: #777;
+}
+
+.audio-info input[type="range"] {
+  padding: 0px;
+  width: 100%;
+  cursor: pointer;
+}
+.beat-admin-info {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.beat-admin-avatar {
+  width: 52px;
+  height: 52px;
+  object-fit: cover;
+  border-radius: 8px;
+  flex-shrink: 0;
+  display: block;
+}
+
+.beat-admin-avatar.no-cover {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #eee;
+  color: #999;
+  font-size: 22px;
+}
+.actions {
+  
+  gap: 6px;
+  align-items: center;
+}
+
+.actions .danger {
+  color: #d22;
+  border-color: #d22;
+}
+
+.actions .danger:hover {
+  background: #d22;
+  color: white;
+}
+/* =========================================================
+   BEATS TABLE PAGINATION
+========================================================= */
+
+.beat-table-wrap {
+    width: 100%;
+
+    overflow-x: auto;
+
+    margin-top: 14px;
+}
+
+
+/* =========================
+   PAGINATION BAR
+========================= */
+
+.beat-pagination {
+    display: flex;
+
+    align-items: center;
+    justify-content: space-between;
+
+    gap: 18px;
+
+    padding-top: 18px;
+    margin-top: 8px;
+
+    border-top:
+        1px solid var(--line);
+}
+
+
+/* text 1-8 / 37 */
+.beat-pagination-info {
+    color:
+        var(--muted);
+
+    font-size:
+        12px;
+
+    white-space:
+        nowrap;
+}
+
+
+/* nhóm button */
+.beat-pagination-controls {
+    display: flex;
+
+    align-items: center;
+
+    gap: 6px;
+}
+
+
+/* tất cả nút */
+.beat-page-number,
+.beat-page-arrow {
+    width: 36px;
+    height: 36px;
+
+    padding: 0;
+
+    display: inline-flex;
+
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 9px;
+
+    border:
+        1px solid var(--line);
+
+    background:
+        #101620;
+
+    color:
+        #9ca7b7;
+
+    font-weight:
+        700;
+
+    cursor:
+        pointer;
+
+    transition:
+        background .2s ease,
+        color .2s ease,
+        border-color .2s ease,
+        transform .2s ease;
+}
+
+
+/* hover */
+.beat-page-number:hover,
+.beat-page-arrow:hover:not(:disabled) {
+    color:
+        #ffffff;
+
+    background:
+        #18212d;
+
+    border-color:
+        #354154;
+
+    transform:
+        translateY(-1px);
+}
+
+
+/* trang đang chọn */
+.beat-page-number.active {
+    background:
+        var(--a);
+
+    color:
+        #070900;
+
+    border-color:
+        var(--a);
+
+    box-shadow:
+        0 0 16px
+        rgba(215, 255, 63, .12);
+
+    cursor:
+        default;
+}
+
+
+/* previous / next disabled */
+.beat-page-arrow:disabled {
+    opacity:
+        .28;
+
+    cursor:
+        not-allowed;
+
+    transform:
+        none;
+}
+
+
+/* ... */
+.beat-page-dots {
+    min-width:
+        26px;
+
+    height:
+        36px;
+
+    display:
+        inline-flex;
+
+    align-items:
+        center;
+
+    justify-content:
+        center;
+
+    color:
+        var(--muted);
+
+    user-select:
+        none;
+}
+
+
+/* =========================
+   EMPTY SEARCH
+========================= */
+
+.beats-empty {
+    min-height:
+        220px;
+
+    display:
+        flex;
+
+    flex-direction:
+        column;
+
+    align-items:
+        center;
+
+    justify-content:
+        center;
+
+    gap:
+        10px;
+
+    color:
+        var(--muted);
+
+    text-align:
+        center;
+}
+
+
+.beats-empty span {
+    font-size:
+        34px;
+
+    color:
+        var(--a);
+
+    opacity:
+        .55;
+}
+
+
+.beats-empty p {
+    margin:
+        0;
+
+    font-size:
+        13px;
+}
+
+
+/* =========================
+   SEARCH INPUT
+========================= */
+
+#beats #search {
+    margin-top:
+        4px;
+
+    margin-bottom:
+        4px;
+}
+
+
+/* =========================
+   MOBILE
+========================= */
+
+@media (max-width: 700px) {
+
+    .beat-pagination {
+        flex-direction:
+            column;
+
+        align-items:
+            flex-start;
+    }
+
+
+    .beat-pagination-controls {
+        width:
+            100%;
+
+        justify-content:
+            center;
+
+        flex-wrap:
+            wrap;
+    }
+
+
+    .beat-pagination-info {
+        width:
+            100%;
+
+        text-align:
+            center;
+    }
+
+}

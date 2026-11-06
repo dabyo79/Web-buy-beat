@@ -1,0 +1,1948 @@
+/* --- ABOUT SECTION --- */
+
+.about-content {
+    display: flex;
+    align-items: center;
+    gap: 10rem;
+    margin-top: -115px;
+}
+
+
+/* Hiệu ứng khi hover */
+
+
+/* Đảm bảo ảnh cũng có đổ bóng phù hợp trong dark mode */
+
+.dark-mode .about-image:hover img {
+    box-shadow: 0 10px 30px rgba(235, 211, 248, 0.1);
+}
+
+.about-text {
+    flex: 1.5;
+    font-size: 1.1rem;
+    line-height: 1.7;
+    color: var(--text-secondary);
+}
+
+.section-badge {
+    display: inline-block;
+    margin-bottom: 10px;
+    padding: 4px 14px;
+    font-size: 11px;
+    letter-spacing: 3px;
+    font-weight: 700;
+    color: #3ED0FF;
+    border: 1px solid rgba(62, 208, 255, 0.5);
+    border-radius: 999px;
+    background: rgba(62, 208, 255, 0.08);
+    box-shadow: 0 0 10px rgba(62, 208, 255, 0.35);
+}
+
+.about-text p {
+    font-size: 16px;
+    line-height: 1.9;
+}
+
+.about-image {
+    flex: 1;
+    position: relative;
+}
+
+.image-stack {
+    position: relative;
+    width: 100%;
+    max-width: 420px;
+    height: 520px;
+    margin: auto;
+    transform: scale(0.65);
+    transform-origin: center;
+}
+
+.about-image {
+    flex: 1;
+    position: relative;
+}
+
+.image-stack .img {
+    position: absolute;
+    width: 100%;
+    border-radius: 18px;
+    transition: all 0.6s ease;
+    filter: contrast(1.05) saturate(1.15);
+}
+
+.img-back {
+    transform: rotate(-10deg) translate(-30px, 20px);
+    opacity: 0.25;
+    box-shadow: 0 0 25px rgba(62, 208, 255, 0.25);
+}
+
+.img-mid {
+    transform: rotate(-4deg) translate(-10px, 10px);
+    opacity: 0.5;
+    box-shadow: 0 0 30px rgba(62, 208, 255, 0.35);
+}
+
+.img-front {
+    position: relative;
+    transform: rotate(3deg);
+    opacity: 1;
+    box-shadow: 0 20px 40px rgb(252 254 255 / 35%), 0 0 30px rgb(236 241 238 / 25%)
+}
+
+.about-image:hover .img-back {
+    transform: rotate(-14deg) translate(-60px, 40px);
+}
+
+.about-image:hover .img-mid {
+    transform: rotate(-6deg) translate(-25px, 20px);
+}
+
+.about-image:hover .img-front {
+    transform: rotate(0deg) scale(1.03);
+}
+
+.about-image {
+    position: relative;
+}
+
+
+/* layer ảnh nền */
+
+.floating-images {
+    position: absolute;
+    inset: 0;
+    z-index: 0;
+    pointer-events: none;
+}
+
+.float-img {
+    position: absolute;
+    width: 120px;
+    opacity: 0.7;
+    animation: floatMove 12s ease-in-out infinite;
+}
+
+.f1 {
+    top: -46px;
+    left: -22px;
+    animation-delay: 0s;
+}
+
+.f2 {
+    bottom: -30px;
+    right: -35px;
+    animation-delay: 3s;
+}
+
+.f3 {
+    bottom: 4%;
+    left: -2px;
+    animation-delay: 6s;
+}
+
+
+/* animation */
+
+@keyframes floatMove {
+    0% {
+        transform: translateY(0) rotate(0deg) scale(1);
+    }
+    50% {
+        transform: translateY(-20px) rotate(3deg) scale(1.05);
+    }
+    100% {
+        transform: translateY(0) rotate(0deg) scale(1);
+    }
+}
+
+
+/* đảm bảo ảnh chính nằm trên */
+
+.image-stack {
+    position: relative;
+    z-index: 2;
+}
+
+.about {
+    position: relative;
+    overflow: hidden;
+}
+
+
+/* container nốt nhạc */
+
+.music-notes-fly {
+    position: absolute;
+    right: 160px;
+    bottom: 60px;
+    pointer-events: none;
+    z-index: 1;
+}
+
+
+/* từng nốt nhạc */
+
+.music-notes-fly span {
+    position: absolute;
+    font-size: 40px;
+    font-weight: 700;
+    animation: noteFly 6s linear infinite;
+    opacity: 0;
+}
+
+@keyframes noteFly {
+    0% {
+        transform: translate(0, 0) scale(0.8);
+        opacity: 0;
+    }
+    15% {
+        opacity: 0.6;
+    }
+    60% {
+        opacity: 0.4;
+    }
+    100% {
+        transform: translate(-40px, -160px) scale(1.4);
+        opacity: 0;
+    }
+}
+
+.music-notes-fly span:nth-child(1) {
+    left: 0;
+    animation-delay: 0s;
+}
+
+.music-notes-fly span:nth-child(2) {
+    left: 18px;
+    animation-delay: 1.2s;
+}
+
+.music-notes-fly span:nth-child(3) {
+    left: -14px;
+    animation-delay: 2.4s;
+}
+
+.music-notes-fly span:nth-child(4) {
+    left: 30px;
+    animation-delay: 3.6s;
+}
+
+.music-notes-fly span:nth-child(5) {
+    left: -26px;
+    animation-delay: 4.8s;
+}
+
+.music-notes-fly span {
+    color: rgba(10, 120, 90, 0.95);
+    text-shadow: 0 0 10px rgba(62, 208, 255, 0.4), 0 0 20px rgba(124, 255, 178, 0.3);
+}
+
+.dark-mode .music-notes-fly span {
+    color: rgba(124, 255, 178, 0.55);
+    text-shadow: 0 0 12px rgba(124, 255, 178, 0.5), 0 0 24px rgba(62, 208, 255, 0.4);
+}
+
+
+/* =========================
+   ABOUT V2 (layout giống ảnh)
+========================= */
+
+
+/* full-width layout, không bó trong .container */
+
+.about-v2__wrap {
+    min-height: 100vh;
+    display: grid;
+    grid-template-columns: minmax(360px, 38vw) 1fr;
+    align-items: stretch;
+}
+
+
+/* LEFT */
+
+.about-v2__left {
+    position: relative;
+    height: 100%;
+    overflow: hidden;
+}
+
+.about-v2__portrait {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center top;
+    display: block;
+}
+
+
+/* tạo lớp fade sáng bên trái giống ảnh */
+
+
+/* nếu bạn dùng smoke.png thì bật class này */
+
+
+/* RIGHT */
+
+.about-v2__right {
+    position: relative;
+    padding: clamp(38px, 6vw, 80px);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    /* để các khung phía sau không bị cắt */
+    overflow: visible;
+    isolation: isolate;
+}
+
+/* ===== NHIỀU KHUNG MỜ PHÍA SAU ===== */
+.about-v2__right::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+
+    border: 1px solid rgba(255, 255, 255, 0.13);
+
+    pointer-events: none;
+    z-index: -1;
+
+    box-shadow:
+        15px -10px 0 rgba(255, 255, 255, 0.11),
+        30px -20px 0 rgba(255, 255, 255, 0.09),
+        45px -30px 0 rgba(255, 255, 255, 0.075),
+        60px -40px 0 rgba(255, 255, 255, 0.06),
+        75px -50px 0 rgba(255, 255, 255, 0.045),
+        90px -60px 0 rgba(255, 255, 255, 0.03);
+}
+
+/* Title giống ảnh: to + shadow */
+
+
+/* text block */
+
+.about-title {
+    font-size: 2.5rem;
+    margin-bottom: 3rem;
+    color: #ade9ac;
+    filter: drop-shadow(3px 3px rgba(0, 0, 0.35)) drop-shadow(3px 0 rgba(0, 0, 0.35));
+}
+
+.about-v2__text {
+    text-align: justify;
+    max-width: 62ch;
+    color: rgba(255, 255, 255, .78);
+    font-size: 16px;
+    line-height: 1.85;
+}
+
+.about-v2__text p {
+    margin: 0 0 16px;
+}
+
+
+/* giữ highlight xanh như bạn đang dùng */
+
+.highlight {
+    -webkit-text-fill-color: unset;
+    background: none;
+    color: #ffab3e;
+    /* xanh dương neon */
+    font-weight: 600;
+    text-shadow: 0 0 10px rgba(62, 208, 255, .18);
+}
+
+
+/* Decor góc phải dưới */
+
+.about-v2__decor {
+    width: 240px;
+    pointer-events: none;
+}
+
+.about-v2__mini {
+    position: absolute;
+    right: 0;
+    bottom: 18px;
+    width: 13rem;
+    height: auto;
+}
+
+
+/* ===== CHAOTIC MUSIC PARTICLES ===== */
+
+.about-v2__notes.chaos {
+    position: absolute;
+    left: 50%;
+    bottom: 10px;
+    transform: translateX(-60%);
+    width: 100%;
+    max-width: 1000px;
+    height: 200px;
+    /* vùng bay */
+    pointer-events: none;
+    z-index: 2;
+}
+
+
+/* mỗi nốt = 1 particle */
+
+
+/* ===== CHAOTIC MUSIC PARTICLES – RANDOM COLORS ===== */
+
+.about-v2__notes.chaos span {
+    position: absolute;
+    bottom: 0;
+    left: calc(10% + 80% * var(--x));
+    font-size: 26px;
+    font-weight: 800;
+    color: var(--c);
+    /* màu riêng từng nốt */
+    text-shadow: 0 0 12px color-mix(in srgb, var(--c) 60%, transparent), 0 0 26px color-mix(in srgb, var(--c) 40%, transparent);
+    opacity: 0;
+    animation: chaosRise var(--t) linear infinite;
+}
+
+
+/* ===== RANDOMIZE POSITION + COLOR ===== */
+
+.about-v2__notes.chaos span:nth-child(1) {
+    --x: .05;
+    --y: 120px;
+    --r: -12deg;
+    --s: 1.1;
+    --t: 4.8s;
+    --c: #7b6cff;
+}
+
+
+/* tím */
+
+.about-v2__notes.chaos span:nth-child(2) {
+    --x: .18;
+    --y: 160px;
+    --r: 8deg;
+    --s: 1.3;
+    --t: 5.6s;
+    --c: #3ed0ff;
+}
+
+
+/* xanh dương */
+
+.about-v2__notes.chaos span:nth-child(3) {
+    --x: .32;
+    --y: 110px;
+    --r: -6deg;
+    --s: 1.0;
+    --t: 4.2s;
+    --c: #6dffb0;
+}
+
+
+/* xanh lá */
+
+.about-v2__notes.chaos span:nth-child(4) {
+    --x: .48;
+    --y: 180px;
+    --r: 14deg;
+    --s: 1.4;
+    --t: 6.2s;
+    --c: #9f7cff;
+}
+
+.about-v2__notes.chaos span:nth-child(5) {
+    --x: .63;
+    --y: 140px;
+    --r: -18deg;
+    --s: 1.2;
+    --t: 5.1s;
+    --c: #38bdf8;
+}
+
+.about-v2__notes.chaos span:nth-child(6) {
+    --x: .74;
+    --y: 170px;
+    --r: 6deg;
+    --s: 1.35;
+    --t: 5.9s;
+    --c: #4ade80;
+}
+
+.about-v2__notes.chaos span:nth-child(7) {
+    --x: .86;
+    --y: 130px;
+    --r: -10deg;
+    --s: 1.1;
+    --t: 4.6s;
+    --c: #a78bfa;
+}
+
+.about-v2__notes.chaos span:nth-child(8) {
+    --x: .12;
+    --y: 190px;
+    --r: 16deg;
+    --s: 1.5;
+    --t: 6.5s;
+    --c: #22d3ee;
+}
+
+.about-v2__notes.chaos span:nth-child(9) {
+    --x: .41;
+    --y: 150px;
+    --r: -4deg;
+    --s: 1.25;
+    --t: 5.4s;
+    --c: #86efac;
+}
+
+.about-v2__notes.chaos span:nth-child(10) {
+    --x: .57;
+    --y: 200px;
+    --r: 20deg;
+    --s: 1.6;
+    --t: 6.8s;
+    --c: #8b5cf6;
+}
+
+
+/* animation giữ nguyên */
+
+@keyframes chaosRise {
+    0% {
+        transform: translateY(0) rotate(0deg) scale(0.8);
+        opacity: 0;
+        filter: blur(0);
+    }
+    15% {
+        opacity: .75;
+    }
+    70% {
+        opacity: .35;
+    }
+    100% {
+        transform: translateX(calc(-40px + 80px * var(--x))) translateY(calc(-1 * var(--y))) rotate(var(--r)) scale(var(--s));
+        opacity: 0;
+        filter: blur(0.6px);
+    }
+}
+
+
+/* Responsive */
+
+@media (max-width: 980px) {
+    .about-v2__wrap {
+        grid-template-columns: 1fr;
+        min-height: auto;
+    }
+    .about-v2__left {
+        height: 420px;
+    }
+    .about-v2__right {
+        padding: 34px 18px 90px;
+    }
+    .about-v2__decor {
+        right: 18px;
+        bottom: 12px;
+        width: 200px;
+    }
+}
+
+.about-v2__right {
+    position: relative;
+}
+
+.about-v2__right::before {
+    content: "";
+    position: absolute;
+    left: 43px;
+    top: 49%;
+    transform: translateY(-50%);
+    width: min(720px, 90%);
+    height: 360px;
+    background: rgb(255 255 255 / 10%);
+    border: 1px solid rgba(62, 208, 255, .12);
+    border-radius: 20px;
+    backdrop-filter: blur(8px);
+    z-index: 0;
+}
+
+.about-kicker,
+.about-title,
+.about-v2__text {
+    position: relative;
+    z-index: 1;
+}
+
+.about-v2__left {
+    position: relative;
+    height: 100%;
+
+    opacity: 1;
+    transform: none;
+    filter: none;
+
+    overflow: hidden;
+}
+
+.about-v2__right {
+    opacity: 0;
+    transform: translateX(90px);
+    filter: blur(10px);
+    transition: transform 1s cubic-bezier(0.22, 1, 0.36, 1), opacity 1s ease, filter 1s ease;
+    will-change: transform, opacity, filter;
+}
+
+.about-v2.show .about-v2__right {
+    opacity: 1;
+    transform: translateX(0);
+    filter: blur(0);
+}
+
+.about-title {
+    opacity: 0;
+    transform: translateY(30px) scale(0.96);
+    transition: transform 0.8s cubic-bezier(0.22, 1, 0.36, 1), opacity 0.8s ease;
+    transition-delay: 0.18s;
+}
+
+.about-v2.show .about-title {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+}
+
+.about-v2__text p {
+    opacity: 0;
+    transform: translateY(24px);
+    filter: blur(6px);
+    transition: transform 0.7s ease, opacity 0.7s ease, filter 0.7s ease;
+}
+
+.about-v2.show .about-v2__text p {
+    opacity: 1;
+    transform: translateY(0);
+    filter: blur(0);
+}
+
+.about-v2.show .about-v2__text p:nth-child(1) {
+    transition-delay: 0.28s;
+}
+
+.about-v2.show .about-v2__text p:nth-child(2) {
+    transition-delay: 0.42s;
+}
+
+.about-v2.show .about-v2__text p:nth-child(3) {
+    transition-delay: 0.56s;
+}
+
+
+
+@keyframes miniFloat {
+    0% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-10px);
+    }
+    100% {
+        transform: translateY(0);
+    }
+}
+
+.about-v2__right::before {
+    transition: transform 0.45s ease, box-shadow 0.45s ease, background 0.45s ease;
+}
+.ascii-logo {
+    font-family: "Courier New", monospace;
+    font-size:  100px;
+ 
+    font-weight: bold;
+    white-space: pre;
+   
+
+   
+
+    -webkit-background-clip: text;
+    
+
+    margin: 0 auto;
+    padding-bottom: 10px;
+    width: 100%;
+    overflow: hidden;
+}
+.ascii-logo {
+    display: flex;
+    
+    align-items: center;
+    gap: 5px;
+
+    white-space: nowrap;
+}
+
+.ascii-letter {
+    margin: 0;
+    font-family: "Courier New", monospace;
+ 
+    
+    font-weight: bold;
+
+    color: #3fecff;
+
+    display: inline-block;
+
+    transition: transform 0.2s ease;
+}
+
+/* chữ đang nảy */
+.ascii-letter.bounce {
+    animation: asciiLetterBounce 0.55s ease;
+}
+
+@keyframes asciiLetterBounce {
+
+    0% {
+        transform: translateY(0);
+    }
+
+    30% {
+        transform: translateY(-18px);
+    }
+
+    55% {
+        transform: translateY(5px);
+    }
+
+    75% {
+        transform: translateY(-4px);
+    }
+
+    100% {
+        transform: translateY(0);
+    }
+
+}
+
+
+/* ===== ABOUT ME IMAGE LOGO ===== */
+.about-v2__right .ascii-logo {
+    position: relative;
+    z-index: 2;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+
+    width: 100%;
+    margin: 0 0 18px;
+    padding: 0;
+
+    overflow: visible;
+    background: none;
+    border: none;
+}
+
+.about-v2__right .about-me-image {
+    display: block;
+    width: min(100%, 400px);
+    height: auto;
+    max-height: 110px;
+
+    object-fit: contain;
+    object-position: left center;
+
+    filter:
+        drop-shadow(0 0 4px rgba(62, 208, 255, 0.65))
+        drop-shadow(0 0 12px rgba(62, 208, 255, 0.2));
+
+    transition:
+        filter 0.3s ease,
+        transform 0.3s ease;
+}
+
+.about-v2__right .about-me-image:hover {
+    transform: translateY(-2px);
+    filter:
+        drop-shadow(0 0 7px rgba(62, 208, 255, 0.8))
+        drop-shadow(0 0 18px rgba(62, 208, 255, 0.35));
+}
+
+/* Mobile */
+@media (max-width: 980px) {
+    .about-v2__right .about-me-image {
+        width: min(100%, 420px);
+        max-height: 90px;
+    }
+}
+.about-v2__mini {
+    animation: miniFloat 4.2s ease-in-out infinite;
+
+    
+}
+/* =========================================
+   ABOUT -> PROJECTS
+   SOUND PARTICLE HANDOFF
+========================================= */
+
+.sound-handoff-layer {
+    position: fixed;
+    inset: 0;
+
+    pointer-events: none;
+
+    z-index: 9998;
+
+    overflow: hidden;
+}
+
+
+/* particle clone bay giữa 2 section */
+.sound-handoff-particle {
+    position: fixed;
+
+    left: 0;
+    top: 0;
+
+    font-size: 26px;
+    font-weight: 800;
+
+    line-height: 1;
+
+    pointer-events: none;
+
+    will-change:
+        transform,
+        opacity,
+        filter;
+
+    transform-origin: center;
+
+    text-shadow:
+        0 0 10px currentColor,
+        0 0 24px currentColor;
+
+    mix-blend-mode: screen;
+}
+
+
+/* khi bắt đầu rời About */
+.about-v2__notes.is-handoff-source {
+    opacity: .7;
+
+    transition:
+        opacity .3s ease;
+}
+
+
+/* PRODUCT nhận dòng năng lượng */
+#shopMainImage {
+    transition:
+        filter .4s ease,
+        transform .4s cubic-bezier(.22,1,.36,1);
+}
+
+
+#shopMainImage.sound-arrive {
+    transform: scale(1.025);
+
+    filter:
+        drop-shadow(
+            0 0 12px
+            rgba(62,208,255,.38)
+        )
+        drop-shadow(
+            0 0 28px
+            rgba(124,255,178,.16)
+        );
+}
+
+
+/* vòng pulse khi particle tới */
+.product-arrival-pulse {
+    position: fixed;
+
+    width: 30px;
+    height: 30px;
+
+    border-radius: 50%;
+
+    border:
+        1px solid rgba(62,208,255,.7);
+
+    pointer-events: none;
+
+    z-index: 9997;
+
+    opacity: 0;
+
+    transform:
+        translate(-50%, -50%)
+        scale(.4);
+}
+
+
+.product-arrival-pulse.fire {
+    animation:
+        productArrivalPulse .7s ease-out forwards;
+}
+
+
+@keyframes productArrivalPulse {
+
+    0% {
+        opacity: .9;
+
+        transform:
+            translate(-50%, -50%)
+            scale(.35);
+    }
+
+    100% {
+        opacity: 0;
+
+        transform:
+            translate(-50%, -50%)
+            scale(4.5);
+    }
+}
+
+
+/* ==========================================================
+   ABOUT CINEMATIC SCROLL
+========================================================== */
+/* FIX TRÀN NGANG ABOUT */
+
+#about {
+    max-width: 100%;
+    overflow-x: clip;
+}
+
+.about-scroll-stage,
+.about-sticky,
+.about-final-stage,
+.about-v2__wrap {
+    width: 100%;
+    max-width: 100%;
+}
+
+/*
+   section dài để có đủ khoảng scroll
+*/
+#about.about-v2 {
+    position: relative;
+
+    min-height: 210vh;
+
+     overflow-x: clip;
+    overflow-y: visible;
+
+    background:
+        radial-gradient(
+            circle at 50% 40%,
+            rgba(62,208,255,.055),
+            transparent 34%
+        ),
+        radial-gradient(
+            circle at 68% 50%,
+            rgba(128,58,243,.05),
+            transparent 38%
+        ),
+        #03070d;
+}
+
+
+/* background giữ cố định */
+#about > .background-3d {
+    position: absolute;
+    inset: 0;
+
+    overflow: hidden;
+
+    opacity: .38;
+
+    pointer-events: none;
+}
+
+
+#about > .background-3d img {
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+
+    filter:
+        brightness(.42)
+        saturate(.75);
+
+    transform:
+        scale(1.04);
+}
+
+
+/* =========================
+   STICKY SCENE
+========================= */
+
+.about-scroll-stage {
+    position: relative;
+
+    height: 210vh;
+}
+
+
+.about-sticky {
+    position: sticky;
+
+    top: 0;
+
+    width: 100%;
+    height: 100vh;
+
+    overflow: hidden;
+
+    isolation: isolate;
+}
+
+
+/* ==========================================================
+   INTRO STAGE
+========================================================== */
+
+.about-intro-stage {
+    position: absolute;
+
+    inset: 0;
+
+    z-index: 3;
+
+    pointer-events: none;
+
+    opacity: 1;
+
+    will-change:
+        opacity,
+        transform,
+        filter;
+}
+
+
+/* glow phía sau portrait */
+.about-intro-glow {
+    position: absolute;
+
+    left: 50%;
+    top: 54%;
+
+    width: min(760px, 58vw);
+    height: min(760px, 58vw);
+
+    transform: translate(-50%, -50%);
+
+    border-radius: 50%;
+
+    background:
+        radial-gradient(
+            circle at 50% 50%,
+            rgba(72, 205, 255, .26) 0%,
+            rgba(44, 162, 220, .18) 22%,
+            rgba(20, 104, 155, .12) 40%,
+            rgba(10, 55, 85, .06) 58%,
+            transparent 76%
+        );
+
+    filter:
+        blur(24px)
+        saturate(1.15);
+
+    opacity: 1;
+
+    animation:
+        aboutGlowPulse
+        5.5s
+        ease-in-out
+        infinite;
+
+    pointer-events: none;
+}
+
+
+/* glow thở nhẹ */
+@keyframes aboutGlowPulse {
+
+    0%,
+    100% {
+        transform:
+            translate(-50%, -50%)
+            scale(1);
+
+        opacity: .9;
+    }
+
+    50% {
+        transform:
+            translate(-50%, -50%)
+            scale(1.07);
+
+        opacity: 1;
+    }
+}
+
+
+/* =========================
+   TEXT SAU PORTRAIT
+========================= */
+
+.about-intro-name {
+    position: absolute;
+
+    left: 50%;
+    top: 44%;
+
+    transform:
+        translate(-50%, -50%);
+
+    width: 100%;
+
+    text-align: center;
+
+    z-index: 1;
+
+    user-select: none;
+}
+
+
+.about-intro-name-main {
+    font-size:
+        clamp(90px, 15vw, 240px);
+
+    line-height: .78;
+
+    font-weight: 900;
+
+    letter-spacing:
+        clamp(4px, .8vw, 15px);
+
+    color:
+        rgba(238,248,255,.96);
+
+    text-shadow:
+        0 0 24px rgba(62,208,255,.08);
+}
+
+
+/* dòng dưới */
+.about-intro-name-real {
+    margin-top:
+        clamp(35px, 5vh, 70px);
+    margin-left:
+        clamp(35px, 10vh, 70px);
+    font-size:
+        clamp(35px, 3vw, 92px);
+
+    line-height: .9;
+
+    font-weight: 800;
+
+    letter-spacing:
+        clamp(4px, .55vw, 11px);
+
+    color:
+        rgba(62,208,255,.16);
+
+    -webkit-text-stroke:
+        1px rgba(62,208,255,.12);
+
+    text-transform: uppercase;
+}
+
+
+/* =========================
+   PORTRAIT GIỮA
+========================= */
+
+.about-intro-portrait {
+    position: absolute;
+
+    left: 50%;
+    bottom: 0;
+
+    z-index: 2;
+
+    width:
+        min(520px, 40vw);
+
+    height: 88vh;
+
+    transform:
+        translateX(-50%);
+
+    transform-origin:
+        center bottom;
+
+    will-change:
+        transform,
+        opacity,
+        filter;
+}
+
+
+.about-intro-portrait img {
+    width: 100%;
+    height: 100%;
+
+    object-fit: contain;
+
+    object-position:
+        center bottom;
+
+    display: block;
+
+    filter:
+        drop-shadow(
+            0 20px 40px
+            rgba(0,0,0,.4)
+        );
+}
+
+
+/* fade dưới chân giống video */
+.about-intro-portrait::after {
+    content: "";
+
+    position: absolute;
+
+    left: 11%;
+    right: 14%;
+    bottom: 0;
+
+    height: 30%;
+
+    pointer-events: none;
+
+    background:
+        linear-gradient(
+            to bottom,
+            transparent,
+            #03070d 92%
+        );
+}
+
+
+/* =========================
+   CHI TIẾT NHỎ
+========================= */
+
+.about-intro-line {
+    position: absolute;
+
+    left: 7vw;
+    right: 7vw;
+    bottom: 42px;
+
+    height: 1px;
+
+    background:
+        linear-gradient(
+            90deg,
+            transparent,
+            rgba(62,208,255,.2),
+            rgba(215,255,63,.12),
+            transparent
+        );
+}
+
+
+.about-intro-index {
+    position: absolute;
+
+    right: 7vw;
+    bottom: 56px;
+
+    font-size: 10px;
+
+    font-weight: 600;
+
+    letter-spacing: 4px;
+
+    color:
+        rgba(255,255,255,.33);
+}
+
+
+/* ==========================================================
+   FINAL ABOUT
+========================================================== */
+
+.about-final-stage {
+    position: absolute;
+
+    inset: 0;
+
+    z-index: 4;
+
+    opacity: 0;
+
+    pointer-events: none;
+
+    will-change:
+        opacity,
+        transform;
+}
+
+
+.about-final-stage
+.about-v2__wrap {
+    min-height: 100vh;
+}
+
+
+/*
+   stage 2 lúc đầu:
+   ảnh vẫn đang gần giữa
+*/
+.about-final-stage
+.about-v2__left {
+    opacity: 1;
+
+    transform:
+        translateX(16vw)
+        scale(.88);
+
+    filter:
+        blur(3px);
+
+    will-change:
+        transform,
+        filter;
+}
+
+
+/*
+   text phải ban đầu chưa hiện
+*/
+.about-final-stage
+.about-v2__right {
+    opacity: 0;
+
+    transform:
+        translateX(80px);
+
+    filter:
+        blur(8px);
+}
+
+
+/* ==========================================================
+   JS VARIABLES
+========================================================== */
+
+#about {
+    --about-p: 0;
+    --about-move: 0;
+}
+
+
+/*
+   INTRO fade dần
+*/
+.about-intro-stage {
+    opacity:
+        calc(
+            1 -
+            var(--about-move)
+        );
+}
+
+
+/*
+   Portrait giữa:
+   zoom nhẹ trước khi chuyển stage
+*/
+.about-intro-portrait {
+    transform:
+        translateX(-50%)
+        translateY(
+            calc(
+                -18px *
+                var(--about-p)
+            )
+        )
+        scale(
+            calc(
+                1 +
+                .04 *
+                var(--about-p)
+            )
+        );
+
+    opacity:
+        calc(
+            1 -
+            var(--about-move)
+        );
+}
+
+
+/*
+   title background parallax
+*/
+.about-intro-name {
+    transform:
+        translate(
+            -50%,
+            calc(
+                -50% -
+                20px *
+                var(--about-p)
+            )
+        );
+
+    opacity:
+        calc(
+            1 -
+            .55 *
+            var(--about-move)
+        );
+}
+
+
+/* =========================
+   KHI ĐANG CHUYỂN SANG FINAL
+========================= */
+
+#about.about-layout-active
+.about-final-stage {
+    opacity: 1;
+
+    pointer-events: auto;
+}
+
+
+#about.about-layout-active
+.about-final-stage
+.about-v2__left {
+    transform:
+        translateX(0)
+        scale(1);
+
+    filter:
+        blur(0);
+
+    transition:
+        transform 1s
+            cubic-bezier(.16,1,.3,1),
+
+        filter .8s ease;
+}
+
+
+#about.about-layout-active
+.about-final-stage
+.about-v2__right {
+    opacity: 1;
+
+    transform:
+        translateX(0);
+
+    filter:
+        blur(0);
+
+    transition:
+        opacity .75s ease .18s,
+
+        transform .95s
+            cubic-bezier(.16,1,.3,1)
+            .12s,
+
+        filter .7s ease .12s;
+}
+
+
+/* paragraph stagger */
+#about.about-layout-active
+.about-v2__text p {
+    opacity: 1;
+
+    transform: translateY(0);
+
+    filter: blur(0);
+}
+
+
+/* =========================
+   MOBILE
+========================= */
+
+@media (max-width: 980px) {
+
+    #about.about-v2,
+    .about-scroll-stage {
+        min-height: 175vh;
+        height: 175vh;
+    }
+
+
+    .about-intro-name {
+        top: 39%;
+    }
+
+
+    .about-intro-name-main {
+        font-size:
+            clamp(68px, 19vw, 120px);
+    }
+
+
+    .about-intro-name-real {
+        margin-top: 28px;
+
+        font-size:
+            clamp(26px, 8vw, 55px);
+    }
+
+
+    .about-intro-portrait {
+        width: 78vw;
+        height: 75vh;
+    }
+
+
+    .about-final-stage
+    .about-v2__left {
+        transform:
+            translateY(-30px)
+            scale(.94);
+    }
+
+}
+
+/* =========================================================
+   ABOUT NAME EFFECT
+   KHÔNG PHỤ THUỘC SCROLL
+========================================================= */
+
+
+/* =========================================================
+   INOZE
+   NỀN CHỮ + CÁC VỆT XANH QUÉT QUA
+========================================================= */
+
+.about-intro-name-main {
+    position: relative;
+    display: inline-block;
+
+    color: rgba(238, 248, 255, .92);
+
+    overflow: hidden;
+    isolation: isolate;
+}
+
+/* =========================================================
+   INOZE GLITCH
+========================================================= */
+
+.about-intro-name-main.glitch {
+    --glitch-mask-a:
+        linear-gradient(
+            #000 var(--glitch-a-top, 0%),
+            transparent var(--glitch-a-top, 0%),
+            transparent calc(
+                100% - var(--glitch-a-bottom, 100%)
+            ),
+            #000 calc(
+                100% - var(--glitch-a-bottom, 100%)
+            )
+        );
+
+    --glitch-mask-b:
+        linear-gradient(
+            #000 var(--glitch-b-top, 0%),
+            transparent var(--glitch-b-top, 0%),
+            transparent calc(
+                100% - var(--glitch-b-bottom, 100%)
+            ),
+            #000 calc(
+                100% - var(--glitch-b-bottom, 100%)
+            )
+        );
+
+    position: relative;
+
+    display: inline-block;
+
+    margin: 0 auto;
+
+    white-space: nowrap;
+
+    user-select: none;
+
+    color: #f4fbff;
+
+    overflow: visible;
+}
+
+
+/* chữ chính */
+.about-intro-name-main .glitch__text {
+    display: block;
+
+    opacity:
+        var(--glitch-alpha, 1);
+
+    transform:
+        skewX(
+            var(--glitch-skew, 0deg)
+        );
+
+    transform-origin:
+        0 50%;
+
+    -webkit-mask-image:
+        var(--glitch-mask-a),
+        var(--glitch-mask-b);
+
+    mask-image:
+        var(--glitch-mask-a),
+        var(--glitch-mask-b);
+
+    -webkit-mask-composite:
+        source-in;
+
+    mask-composite:
+        intersect;
+}
+
+
+/* slice */
+.about-intro-name-main .glitch__slice {
+    position: absolute;
+
+    top: 0;
+    left: 0;
+
+    width: 100%;
+    height: 100%;
+
+    overflow: hidden;
+
+    pointer-events: none;
+
+    opacity:
+        var(--glitch-alpha, 1);
+
+    transform-origin:
+        0 50%;
+
+    color: #f4fbff;
+}
+
+
+/* slice A */
+.about-intro-name-main .glitch__slice--a {
+    text-shadow:
+        var(
+            --glitch-a-shadow,
+            none
+        );
+
+    clip-path:
+        inset(
+            var(--glitch-a-top, 0%)
+            0
+            var(--glitch-a-bottom, 100%)
+            0
+        );
+
+    transform:
+        translate3d(
+            var(--glitch-a-x, 0px),
+            var(--glitch-a-y, 0px),
+            0
+        )
+        skewX(
+            var(--glitch-skew, 0deg)
+        );
+}
+
+
+/* slice B */
+.about-intro-name-main .glitch__slice--b {
+    text-shadow:
+        var(
+            --glitch-b-shadow,
+            none
+        );
+
+    clip-path:
+        inset(
+            var(--glitch-b-top, 0%)
+            0
+            var(--glitch-b-bottom, 100%)
+            0
+        );
+
+    transform:
+        translate3d(
+            var(--glitch-b-x, 0px),
+            var(--glitch-b-y, 0px),
+            0
+        )
+        skewX(
+            var(--glitch-skew, 0deg)
+        );
+
+    -webkit-mask-image:
+        var(--glitch-mask-a);
+
+    mask-image:
+        var(--glitch-mask-a);
+}
+
+/* =========================================================
+   NGUYỄN DUY PHƯƠNG
+   TỪNG CHỮ MỜ DẦN TRÁI -> PHẢI
+========================================================= */
+/* =========================================
+   SPLIT NAME AROUND PORTRAIT
+========================================= */
+
+.about-intro-name-real.name-split {
+    position: relative;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    gap: clamp(180px, 20vw, 420px);
+
+    width: 100%;
+
+    white-space: nowrap;
+}
+
+
+/* 2 cụm chữ */
+.about-intro-name-real .name-side {
+    display: flex;
+    align-items: center;
+}
+
+
+/* bên trái */
+.about-intro-name-real .name-side--left {
+    justify-content: flex-end;
+
+    text-align: right;
+}
+
+
+/* bên phải */
+.about-intro-name-real .name-side--right {
+    justify-content: flex-start;
+
+    text-align: left;
+}
+
+
+/* chữ trắng như bạn muốn */
+.about-intro-name-real.name-split
+.name-side span:not(.name-space) {
+
+    display: inline-block;
+
+    color: #e1e1e1;
+
+    opacity: 1;
+ 
+    animation:
+        nameLetterDisappear
+        3.6s
+        ease-in-out
+        infinite;
+
+    animation-delay:
+        calc(
+            var(--i) * .10s
+        );
+}
+
+
+/* khoảng cách giữa DUY và PHƯƠNG */
+.about-intro-name-real .name-space {
+    width: .32em;
+}
+.about-intro-name-real.name-fade {
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    white-space: nowrap;
+}
+
+
+/* ký tự bình thường */
+.about-intro-name-real.name-fade span:not(.name-space) {
+    display: inline-block;
+
+    color: #ffffff;
+
+    opacity: 1;
+
+    text-shadow:
+        0 0 10px rgba(72, 205, 255, .08);
+
+    animation:
+        nameLetterDisappear
+        3.6s
+        ease-in-out
+        infinite;
+
+    animation-delay:
+        calc(
+            var(--i) * .1s
+        );
+}
+
+
+/* khoảng trắng */
+.about-intro-name-real .name-space {
+    display: inline-block;
+    width: .28em;
+}
+
+
+/* wave chạy trái -> phải */
+@keyframes nameLetterDisappear {
+
+    0%,
+    12% {
+        opacity: 1;
+    }
+
+    28% {
+        opacity: 0;
+    }
+
+    68% {
+        opacity: 0;
+    }
+
+    84%,
+    100% {
+        opacity: 1;
+    }
+
+}
+/* =========================================================
+   PARTICLE LAYER
+========================================================= */
+
+.about-float-particles {
+    position: absolute;
+    inset: 0;
+
+    z-index: 1;
+
+    overflow: hidden;
+
+    pointer-events: none;
+}
+
+
+/* từng đốm */
+.about-float-particles span {
+    position: absolute;
+
+    left: var(--x);
+    bottom: -40px;
+
+    width: var(--s);
+    height: var(--s);
+
+    border-radius: 50%;
+
+    background:
+        radial-gradient(
+            circle,
+            rgba(190, 245, 255, 1) 0%,
+            rgba(72, 210, 255, .95) 35%,
+            rgba(32, 140, 205, .7) 58%,
+            rgba(32, 140, 205, 0) 100%
+        );
+
+    box-shadow:
+        0 0 8px rgba(72, 210, 255, .75),
+        0 0 18px rgba(72, 210, 255, .38);
+
+    opacity: 0;
+
+    animation:
+        aboutParticleRise
+        var(--d)
+        linear
+        infinite;
+
+    animation-delay:
+        var(--delay);
+
+    will-change:
+        transform,
+        opacity;
+}
+
+
+/* bay lên + lắc nhẹ */
+@keyframes aboutParticleRise {
+
+    0% {
+        transform:
+            translate3d(0, 0, 0)
+            scale(.65);
+
+        opacity: 0;
+    }
+
+    12% {
+        opacity: .75;
+    }
+
+    40% {
+        transform:
+            translate3d(14px, -34vh, 0)
+            scale(1);
+
+        opacity: .62;
+    }
+
+    70% {
+        transform:
+            translate3d(-10px, -68vh, 0)
+            scale(.9);
+
+        opacity: .38;
+    }
+
+    100% {
+        transform:
+            translate3d(8px, -108vh, 0)
+            scale(.55);
+
+        opacity: 0;
+    }
+}
+
+
+/* vài hạt sáng mạnh hơn */
+.about-float-particles span:nth-child(3n) {
+    box-shadow:
+        0 0 10px rgba(110, 230, 255, .9),
+        0 0 26px rgba(60, 190, 255, .48);
+}
+
+
+/* vài hạt mờ hơn để có chiều sâu */
+.about-float-particles span:nth-child(4n) {
+    filter: blur(.6px);
+
+    opacity: .55;
+}
